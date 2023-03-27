@@ -1,10 +1,10 @@
 <script>
 
-import AppNav from "/AppNav.vue"
+import AppNav from "./AppNav.vue"
 // dobbiamo esportarlo per poterlo importare
 export default {
-    name:'AppHeader',
-    components:{
+    name: 'AppHeader',
+    components: {
         AppNav
     }
 
@@ -12,12 +12,37 @@ export default {
 </script>
 
 <template>
-    <header class="top-box">Prova 123</header>
-    <AppNav></AppNav>
+    <header>
+        <div class="container">
+            <div class="col-left">
+                <img src="../assets/img/dc-logo.png" alt="">
+            </div>
+            <div class="col-center"></div>
+            <div class="col-right">
+                <AppNav></AppNav>
+            </div>
+        </div>
+
+    </header>
 </template>
 
-<style scoped>
-header{
-    color: red;
+<style lang="scss" scoped>
+@use '../assets/partials/variables' as *;
+header {
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-items:center;
+        padding: 10px;
+        
+    }
+
+    .col-left{
+        flex-grow: 1;
+    }
+
+    background-color: $fourth_color;
+
 }
 </style>
